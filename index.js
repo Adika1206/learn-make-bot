@@ -28,13 +28,12 @@ const start = () => {
         {command: '/random_mem', description: "рандомный мем"}
     ])
     
-    let sticker_rand = Math.floor(Math.random() * stickers.length);
-    let mem_rand = Math.floor(Math.random() * mem.length);
-    
     
     bot.on('message', async(msg) => {
         const text = msg.text
         const chatId = msg.chat.id
+        let sticker_rand = Math.floor(Math.random() * stickers.length);
+        let mem_rand = Math.floor(Math.random() * mem.length);
         if (text === "/start") {
             await bot.sendMessage(chatId, `Добро пожаловать`)
         }
